@@ -1,0 +1,45 @@
+.centered {
+  display: grid;
+  grid-template-columns: minmax(2.4rem, 1fr) minmax(0, 100vh) minmax(
+      2.4rem,
+      1fr
+    );
+
+  > * {
+    grid-column: 2;
+  }
+}
+
+body {
+  background-color: white;
+  color: black;
+  grid-template-rows: 5rem 1fr auto;
+  grid-template-areas:
+    'navbar navbar navbar'
+    '. content .'
+    'footer footer footer';
+  grid-row-gap: 5rem;
+  min-width: 0; // https://css-tricks.com/preventing-a-grid-blowout/
+  min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#page-content {
+  grid-area: content;
+}
+
+a {
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+#page-footer {
+  grid-area: footer;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem;
+
+  * {
+    text-align: center;
+  }
+}
