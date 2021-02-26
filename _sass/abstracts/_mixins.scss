@@ -1,0 +1,26 @@
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin border-top-radius($unit: $border-radius) {
+  border-top-left-radius: $unit;
+  border-top-right-radius: $unit;
+}
+
+@mixin border-bottom-radius($unit: $border-radius) {
+  border-bottom-left-radius: $unit;
+  border-bottom-right-radius: $unit;
+}

@@ -1,0 +1,45 @@
+// Colors
+$text-color: hsl(0, 0%, 13%);
+$black: hsl(210, 11%, 15%);
+$light-grey: hsl(0, 0%, 93%);
+$mid-grey: hsl(208, 7%, 46%);
+$dark-grey: hsl(0, 0%, 27%);
+$white: hsl(0, 0%, 100%);
+
+// Backgrounds
+$background-light-transparent: hsla(0, 0%, 100%, 0.2);
+$background-dark-transparent: hsla(0, 0%, 0%, 0.5);
+$shadow: hsla(0, 0%, 13%, 0.2);
+
+// Borders
+$border-radius: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-circle: 50%;
+
+// Spacing/Padding
+$spacing-base: 0.5rem;
+$margin-base: $spacing-base; // 0.5rem / 8px
+$padding-base: $spacing-base; // 0.5rem / 8px
+
+$margin-xs: $margin-base * 1; // 0.5rem / 8px
+$margin-sm: $margin-base * 2; // 1rem / 16px
+$margin-md: $margin-base * 3; // 1.5rem / 24px
+$margin-lg: $margin-base * 4; // 2rem / 32px
+$margin-xl: $margin-base * 5; // 2.5rem / 40px
+
+$padding-xs: $padding-base * 1; // 0.5rem / 8px
+$padding-sm: $padding-base * 2; // 1rem / 16px
+$padding-md: $padding-base * 3; // 1.5rem / 24px
+$padding-lg: $padding-base * 4; // 2rem / 32px
+$padding-xl: $padding-base * 5; // 2.5rem / 40px
+
+// Box shadow
+$box-shadow: 0 0 0.5em $shadow;
+
+// Line hights
+$line-height-light: 1px;
+$line-height-bold: 2px;
+
+$transition-duration: 200ms;
+$transition-delay: 400ms;
