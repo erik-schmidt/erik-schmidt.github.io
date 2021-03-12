@@ -18,6 +18,7 @@ $navbar-height: 5rem;
   display: flex;
   height: 100%;
   justify-content: space-between;
+  background-color: $white;
 }
 
 #home-link {
@@ -97,35 +98,30 @@ $navbar-height: 5rem;
 }
 
 @media screen and (max-width: 600px) {
-  .navbar-container .navbar-links {
+  .icon {
+    display: block;
+    position: absolute;
+    margin: 1.3rem;
+    top: 0;
+    right: 0;
+    color: $black;
+  }
+
+  .navbar-links {
     display: none;
   }
 
-  .icon {
-    float: right;
-    display: block;
-    z-index: 20;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .navbar-container.responsive {
-    position: relative;
+  .navbar-container.active .navbar-links {
+    display: grid;
+    bottom: 0;
+    grid-column-gap: $spacing-base;
   }
 
-  .navbar-container.responsive .navbar-links {
-    display: block;
-    z-index: 2;
-    position: absolute;
-    background-color: $white;
-    box-shadow: bottom-shadow(4);
-    border-radius: 0.5em;
-    text-align: left;
-    top: 0;
-    right: 0;
+  .navbar-container {
+    flex-direction: column;
+  }
 
-    .navbar-link {
-      margin: 1em;
-    }
+  #home-link {
+    margin-top: $margin-sm;
   }
 }
