@@ -10,8 +10,6 @@ $navbar-height: 5rem;
 }
 
 .navbar {
-  background-color: $dark-grey;
-  box-shadow: bottom-shadow(2);
   height: 100%;
 }
 
@@ -33,8 +31,7 @@ $navbar-height: 5rem;
 
 #website-name {
   font-size: $large-font;
-  font-family: $text-font-stack-light;
-  color: $light-grey;
+  color: $black;
 }
 
 .navbar-links {
@@ -42,12 +39,15 @@ $navbar-height: 5rem;
   list-style: none;
   display: grid;
   grid-row-gap: 0;
-  grid-column-gap: $spacing-base;
   grid-auto-flow: column;
   align-items: center;
   box-shadow: none;
   padding: 0;
   position: static;
+}
+
+.icon {
+  display: none;
 }
 
 .navbar-item {
@@ -58,14 +58,14 @@ $navbar-height: 5rem;
   border-radius: $border-radius;
   padding: 0 $padding-sm;
   display: block;
-  color: $white;
+  color: $mid-grey;
 }
 
 .link-after {
-  content: '';
+  content: "";
   display: block;
   height: 0.15rem;
-  background: white;
+  background: $orange;
 }
 
 #active-navbar-link,
@@ -77,16 +77,55 @@ $navbar-height: 5rem;
     transition: width 0.35s;
   }
 
-  &:hover::after {
-    width: 100%;
+  &:hover {
+    color: $black;
+
+    &::after {
+      width: 100%;
+    }
   }
 }
 
 #active-navbar-link {
   font-weight: bold;
+  color: $black;
 
   &::after {
     @extend .link-after;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-container .navbar-links {
+    display: none;
+  }
+
+  .icon {
+    float: right;
+    display: block;
+    z-index: 20;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-container.responsive {
+    position: relative;
+  }
+
+  .navbar-container.responsive .navbar-links {
+    display: block;
+    z-index: 2;
+    position: absolute;
+    background-color: $white;
+    box-shadow: bottom-shadow(4);
+    border-radius: 0.5em;
+    text-align: left;
+    top: 0;
+    right: 0;
+
+    .navbar-link {
+      margin: 1em;
+    }
   }
 }

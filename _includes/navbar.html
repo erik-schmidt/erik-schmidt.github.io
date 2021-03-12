@@ -1,15 +1,28 @@
 <header class="navbar-header">
   <nav class="navbar centered">
-    <div class="navbar-container">
+    <div class="navbar-container" id="navbar-container">
       <a href="/" id="home-link" aria-label="Homepage">
         <img src="/assets/images/favicon-192x192.png" aria-hidden="true" height=32 width=32>
         <span id="website-name">{{ site.title }}</span>
       </a>
-          <ul class="navbar-links">
-            <li class="navbar-item"><a class="navbar-link" href="/blog" {% if page.title == "Blog" %} aria-current="page" id="active-navbar-link"{% endif %}>Blog</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="/about" {% if page.title == "About" %} aria-current="page" id="active-navbar-link"  {% endif %}>About</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="/contact" {% if page.title == "Contact" %} aria-current="page" id="active-navbar-link" {% endif %}>Contact</a></li>
-          </ul>
+        <ul class="navbar-links" id="navbar-links">
+          <li class="navbar-item"><a class="navbar-link" href="/blog" {% if page.title == "Blog" %} aria-current="page" id="active-navbar-link"{% endif %}>Blog</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/about" {% if page.title == "About" %} aria-current="page" id="active-navbar-link"  {% endif %}>Über mich</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/contact" {% if page.title == "Contact" %} aria-current="page" id="active-navbar-link" {% endif %}>Kontakt</a></li>
+        </ul>
+      <a href="javascript:void(0);" class="icon" onclick="onClick()">
+        <i class="fas fa-chevron-down" style="color: black;"></i>
+      </a>
     </div>
   </nav>
 </header>
+<script>
+  function onClick() {
+    var x = document.getElementById("navbar-container");
+    if (x.className === "navbar-container") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar-container"
+    }
+  }
+</script>
