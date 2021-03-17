@@ -2,15 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="/assets/styles/main.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="shortcut icon" type="image/jpg" href="/assets/images/favicon-192x192.png"/>
   </head>
-  <body class="centered">
-    {%- include navbar.html -%}
-    <main id="page-content">{{ content }}</main>
+  <body>
+    <main id="page-content">
+      {%- include navbar.html -%}
+      <div class="content">
+        {{ content }}
+      </div>
+    </main>
     <footer id="page-footer" class="centered">
       <div>
         <span aria-hidden="true">Proudly made by Erik with ❤</span>

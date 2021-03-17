@@ -2,11 +2,10 @@ $navbar-height: 5rem;
 
 .navbar-header {
   grid-area: navbar;
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
-  height: $navbar-height;
 }
 
 .icon-container {
@@ -17,12 +16,7 @@ $navbar-height: 5rem;
 }
 
 .navbar {
-  height: 100%;
-}
-
-.navbar-container {
   display: flex;
-  height: 100%;
   justify-content: space-between;
   background-color: $white;
   align-items: center;
@@ -48,13 +42,6 @@ $navbar-height: 5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
-  // display: grid;
-  // grid-row-gap: 0;
-  // grid-auto-flow: column;
-  // align-items: center;
-  // box-shadow: none;
-  // padding: 0;
-  // position: static;
 }
 
 .icon {
@@ -95,15 +82,15 @@ $navbar-height: 5rem;
       width: 100%;
     }
   }
-}
 
-#active-navbar-link {
-  font-weight: bold;
-  color: $black;
+  #active-navbar-link {
+    font-weight: bold;
+    color: $black;
 
-  &::after {
-    @extend .link-after;
-    width: 100%;
+    &::after {
+      @extend .link-after;
+      width: 100%;
+    }
   }
 }
 
@@ -113,24 +100,25 @@ $navbar-height: 5rem;
     margin-bottom: $margin-xs;
   }
 
-  .navbar-container {
+  .navbar {
     flex-direction: column;
-    margin-top: $margin-sm;
     align-items: unset;
   }
 
   .navbar-links {
     display: none;
   }
+  
 
   .navbar-link {
     padding: $margin-xs 0;
   }
 
-  .navbar-container.active .navbar-links {
+  .navbar.active .navbar-links {
     display: flex;
     flex-direction: column;
     margin: 0;
+    margin-top: $margin-sm;
     padding: 0;
   }
 
