@@ -9,12 +9,18 @@ $navbar-height: 5rem;
   height: $navbar-height;
 }
 
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+
 .navbar {
   height: 100%;
 }
 
 .navbar-container {
-  align-items: center;
   display: flex;
   height: 100%;
   justify-content: space-between;
@@ -38,13 +44,16 @@ $navbar-height: 5rem;
 .navbar-links {
   color: $white;
   list-style: none;
-  display: grid;
-  grid-row-gap: 0;
-  grid-auto-flow: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  box-shadow: none;
-  padding: 0;
-  position: static;
+  // display: grid;
+  // grid-row-gap: 0;
+  // grid-auto-flow: column;
+  // align-items: center;
+  // box-shadow: none;
+  // padding: 0;
+  // position: static;
 }
 
 .icon {
@@ -66,7 +75,7 @@ $navbar-height: 5rem;
   content: "";
   display: block;
   height: 0.15rem;
-  background: $orange;
+  background: $main-color;
 }
 
 #active-navbar-link,
@@ -100,25 +109,27 @@ $navbar-height: 5rem;
 @media screen and (max-width: 600px) {
   .icon {
     display: block;
-    position: absolute;
-    margin: 1.3rem;
-    top: 0;
-    right: 0;
-    color: $black;
+    margin-bottom: $margin-xs;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    margin-top: $margin-sm;
   }
 
   .navbar-links {
     display: none;
   }
 
-  .navbar-container.active .navbar-links {
-    display: grid;
-    bottom: 0;
-    grid-column-gap: $spacing-base;
+  .navbar-link {
+    padding: $margin-xs 0;
   }
 
-  .navbar-container {
+  .navbar-container.active .navbar-links {
+    display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
 
   #home-link {
